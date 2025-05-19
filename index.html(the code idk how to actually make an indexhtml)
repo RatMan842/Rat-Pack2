@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Welcome to my secret coding place!</title></head>
+<style>
+h1 {font-size: 200%; color: orange; font-family: Papyrus;}
+h2 {font-size: 150%; color: gold; font-family: Papyrus;}
+p {font-size: 100%; color: darkolivegreen; font-family: Papyrus;}
+  </style>
+  <body>
+      <p id="h1"></p>
+      <script src="script.js"></script>
+<h1>Welcome to my secret coding place!</h1>
+<h2>This is where i am self teaching myself coding LOL!</h2>
+<p>I wont release this for a bit so if you're here its gonna be a bit before much happens! but other than that welcome to my space to think about and teach myself coding! im gonna put some goofy images her or smth idk yet but if you're here dad im glad you tried the code i sent you(if i sent it lol). </p>
+<img>
+  </body>
+</html>
