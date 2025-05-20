@@ -13,12 +13,8 @@ button1 {font-size: 110%; color: indigo; font-family: cursive;}
 <h1>Welcome to my secret coding place!</h1>
 <h2>This is where i code goofy things!</h2>
 <p1>welcome to my space where i think about and try to teach myself html coding. nothing is really going on rn, but if you check in a few days maybe somthing will be. </p1>
-    <div>
-      <div>
-        <audio id="fishsound" src="assets/fish.mp3" autostart="false"></audio>
-        <button1 onclick="clickfish();" >Fish</button1>
-      </div>
-    </div>
+<audio id='fishsound'><source src="assets/fish.mp3"></audio>
+<button1 id='btn' onclick='playsound()'>fish</button1>
     <script>
       function playsound() {
         var fishsound = document.getElementById("fishsound");
