@@ -21,8 +21,9 @@ button {font-size: 110%; color: indigo; font-family: cursive;}
     <script>
       var snd = new Audio("fish.mp3");
       function clickfish(){
-        var sound = document.getElementById('fish.mp3');
-        sound.play(fish.mp3);
+        var sound = document.getElementById('assets/fish.mp3');
+        sound.play();
+        snd.currentTime=0;
       }
     </script>
   </body>
