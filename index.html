@@ -28,7 +28,7 @@ const fishbtn = document.getElementById('fishbtn');
     const audioPlayer = document.getElementById('fishsnd');
     let hasPlayed = false;
 
-    fishbtn.addEventListener('click', () => {
+    fishbtn.addEventListener('click', () {
       if (!hasPlayed) {
         audioPlayer.play();
         fishbtn.disabled = true;  // Disable the button after the first play
@@ -36,28 +36,9 @@ const fishbtn = document.getElementById('fishbtn');
       }
     });
 
-    audioPlayer.addEventListener('ended', () => {
+    audioPlayer.addEventListener('ended', () {
       fishbtn.disabled = false; // Re-enable the button after audio ends
       fishbtn.focus(); // Optional: Focus back on the button
-    });
-
-    audioPlayer.loop = false;
-
-    const fishwebp = document.getElementById('fishwebp');
-    const audioPlayer = document.getElementById('fishsnd');
-    let hasPlayed = false;
-
-    fishwebp.addEventListener('click', () => {
-      if (!hasPlayed) {
-        audioPlayer.play();
-        fishwebp.disabled = true;  // Disable the button after the first play
-        hasPlayed = true;
-      }
-    });
-
-    audioPlayer.addEventListener('ended', () => {
-      fishwebp.disabled = false; // Re-enable the button after audio ends
-      fishwebp.focus(); // Optional: Focus back on the button
     });
 
     audioPlayer.loop = false;
