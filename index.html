@@ -24,8 +24,15 @@ button1 {font-size: 110%; color: indigo; font-family: cursive;}
         fishsnd.autoplay = 'false'
         fishsnd.load();
       }
-    function audioEnded() {
-      document.getElementById('fishsnd').currentTime = 0;
+    function fishsnd() {
+      var audio = document.getElementById('fishsnd');
+      audio.addEventListener('ended', audioEnded);
+      audio.play();
+    }
+    function fishEnds() {
+      var audio = document.getElementById('fishsnd');
+      audio.currentTime = 0;
+      audio.removeEventListener('ended', fishends);
       // Optionally disable the play button until the reset is complete
     }
     </script>
