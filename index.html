@@ -24,7 +24,11 @@ button1 {font-size: 110%; color: indigo; font-family: cursive;}
         fishsnd.autoplay = 'true'
         fishsnd.load();
       }
-setTimeout(playAudio, 500);
+        fishsnd = document.getElementById(fishsnd);
+        fishsnd.play();
+        fishsnd.onended = function() {
+          timeOut(500);
+        }
     </script>
   </body>
 </html>
