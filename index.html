@@ -26,10 +26,10 @@ button1 {font-size: 110%; color: indigo; font-family: cursive;}
       }
     function fishsnd() {
       var audio = document.getElementById('fishsnd');
-      audio.addEventListener('ended', audioEnded);
+      audio.addEventListener('ended', fishends);
       audio.play();
     }
-    function fishEnds() {
+    function fishends() {
       var audio = document.getElementById('fishsnd');
       audio.currentTime = 0;
       audio.removeEventListener('ended', fishends);
