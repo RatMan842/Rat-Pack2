@@ -15,8 +15,8 @@ button1 {font-size: 110%; color: indigo; font-family: cursive;}
 <p1>welcome to my space where i think about and try to teach myself html coding. nothing is really going on rn, but if you check in a few days maybe somthing will be. </p1>
 <audio id='fishsnd'><source src="fish.mp3" preload="auto"></audio>
 <center>
-  <img> <br><br><br> <img style="text-align:center;" src="assets/fish.webp" alt=fish.webp width="285" height="200" usemap="#fish.webp" onclick="pressfish()" onclick="document.getElementById('fishsnd').playsound(fishsnd);"></img></img><br>
-    <button1 border="0" padding="0" onclick="pressfish()" onclick="document.getElementById('fishsnd').playsound(fishsnd);">fish</button1>
+  <img> <br><br><br> <img id="fishwebp" style="text-align:center;" src="assets/fish.webp" alt=fish.webp width="285" height="200" usemap="#fish.webp" onclick="pressfish()" onclick="document.getElementById('fishsnd').playsound(fishsnd);"></img></img><br>
+    <button1 id="fishbtn" border="0" padding="0" onclick="pressfish()" onclick="document.getElementById('fishsnd').playsound(fishsnd);">fish</button1>
 </center>
     <script>
       function pressfish() {
@@ -24,17 +24,43 @@ button1 {font-size: 110%; color: indigo; font-family: cursive;}
         fishsnd.autoplay = 'false'
         fishsnd.load();
       }
-    function fishsnd() {
-      var audio = document.getElementById('fishsnd');
-      audio.addEventListener('ended', fishends);
-      audio.play();
-    }
-    function fishends() {
-      var audio = document.getElementById('fishsnd');
-      audio.currentTime = 0;
-      audio.removeEventListener('ended', fishends);
-      // Optionally disable the play button until the reset is complete
-    }
+const fishbtn = document.getElementById('fishbtn');
+    const audioPlayer = document.getElementById('fishsnd');
+    let hasPlayed = false;
+
+    fishbtn.addEventListener('click', () => {
+      if (!hasPlayed) {
+        audioPlayer.play();
+        fishbtn.disabled = true;  // Disable the button after the first play
+        hasPlayed = true;
+      }
+    });
+
+    audioPlayer.addEventListener('ended', () => {
+      fishbtn.disabled = false; // Re-enable the button after audio ends
+      fishbtn.focus(); // Optional: Focus back on the button
+    });
+
+    audioPlayer.loop = false;
+
+    const fishwebp = document.getElementById('fishwebp');
+    const audioPlayer = document.getElementById('fishsnd');
+    let hasPlayed = false;
+
+    fishwebp.addEventListener('click', () => {
+      if (!hasPlayed) {
+        audioPlayer.play();
+        fishwebp.disabled = true;  // Disable the button after the first play
+        hasPlayed = true;
+      }
+    });
+
+    audioPlayer.addEventListener('ended', () => {
+      fishwebp.disabled = false; // Re-enable the button after audio ends
+      fishwebp.focus(); // Optional: Focus back on the button
+    });
+
+    audioPlayer.loop = false;
     </script>
   </body>
 </html>
