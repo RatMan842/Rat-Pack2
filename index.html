@@ -24,24 +24,15 @@ button1 {font-size: 110%; color: indigo; font-family: cursive;}
         fishsnd.autoplay = 'false'
         fishsnd.load();
       }
-const fishbtn = document.getElementById('fishbtn');
-    const audioPlayer = document.getElementById('fishsnd');
-    let hasPlayed = false;
-
-    fishbtn.addEventListener('click', () {
-      if (!hasPlayed) {
-        audioPlayer.play();
-        fishbtn.disabled = true;  // Disable the button after the first play
-        hasPlayed = true;
-      }
-    });
-
-    audioPlayer.addEventListener('ended', () {
-      fishbtn.disabled = false; // Re-enable the button after audio ends
-      fishbtn.focus(); // Optional: Focus back on the button
-    });
-
-    audioPlayer.loop = false;
+          function audioEnded() {
+      document.getElementById('fishsnd').currentTime = 0;
+      // Optionally disable the play button until the reset is complete
+    }
+    function playAudio() {
+      var audio = document.getElementById('fishsnd');
+      audio.play();
+      // Enable the play button if it was disabled
+    }
     </script>
   </body>
 </html>
