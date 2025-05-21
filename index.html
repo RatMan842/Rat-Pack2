@@ -21,14 +21,13 @@ button1 {font-size: 110%; color: indigo; font-family: cursive;}
     <script>
       function pressfish() {
         var fishsnd = document.getElementById("fishsnd");
-        fishsnd.autoplay = 'true'
+        fishsnd.autoplay = 'false'
         fishsnd.load();
       }
-        fishsnd = document.getElementById(fishsnd);
-        fishsnd.play();
-        fishsnd.onended = function() {
-          timeOut(500);
-        }
+    function audioEnded() {
+      document.getElementById('myAudio').currentTime = 0;
+      // Optionally disable the play button until the reset is complete
+    }
     </script>
   </body>
 </html>
